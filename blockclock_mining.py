@@ -34,7 +34,6 @@ def main():
     old_reward = get_stats()
     while True:
         new_reward = get_stats()
-        print(new_reward)
         if new_reward > old_reward:
             send_stats()
         else:
