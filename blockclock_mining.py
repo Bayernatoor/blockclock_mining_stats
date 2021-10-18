@@ -29,16 +29,16 @@ def send_stats():
 
 
 def main():
-    print("Mining Ahoy!")
+    send_stats()
+    print("There's nothing like the sound of ASICs in the morning")
     old_reward = get_stats()
-    print(old_reward)
     while True:
         new_reward = get_stats()
         print(new_reward)
         if new_reward > old_reward:
             send_stats()
         else:
-            print("sleeping for 5 minutes to the sound of hashing ASICs")
+            print("sleeping for 5 minutes, maybe then I'll have stacked more sats")
             time.sleep(5 * 60)
 
 
