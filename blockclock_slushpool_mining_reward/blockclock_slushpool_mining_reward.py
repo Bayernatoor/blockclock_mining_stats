@@ -5,6 +5,15 @@ import time
 slush_pool_url = "https://slushpool.com/accounts/profile/json/btc/"
 headers = {"SlushPool-Auth-Token": "<YOURSLUSHPOOLAPITOKEN>"}
 
+tags = [
+    "cm.minin.hash_rate_2016_blocks",
+    "cm.markets.price",
+    "cm.markets.sats_per_dollar",
+    "cm.mempool.transactions",
+    "cm.retarget.retarget_date",
+    "cm.blockchain.block_height"
+]
+
 
 def get_stats():
     # pull data from slushpool api - specific user
@@ -30,14 +39,24 @@ def send_stats():
 
 def main():
     send_stats()
-    print("There's nothing like the sound of ASICs in the morning")
+    print("There's nothing like the sound of ASICs in the morning.\n")
     old_reward = get_stats()
     while True:
+        tag_count = 0
+        backend_tag_selector = tags[tag_count]
+        tag_url = f"http://<YOURBLOCKCLOCKIP>/api/pick/{backend_tag_selector}"
         new_reward = get_stats()
         if new_reward > old_reward:
             send_stats()
-        else:
-            print("sleeping for 5 minutes, maybe then I'll have stacked more sats")
+        else:          
+            print("<=============================>")
+            print("Checking in with miners...")
+            print("No new sats...sleeping for 5 minutes, maybe then I'll have stacked more sats!")
+            print("<=============================>\n")
+            
+            print(f"In the meantime let's display the {backend_tag_selector}\n")
+            requests.get(tag_url) 
+            tag_count += 1
             time.sleep(5 * 60)
 
 
