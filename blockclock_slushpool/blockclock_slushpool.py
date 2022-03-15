@@ -121,26 +121,26 @@ def format_slushpool_data():
     slushpool_query_dict = get_slushpool_stats()
     slushpool_tag_list = list_slushpool_tags() 
     refresh_rate = (display_refresh_time() * 60)
-    print(refresh_rate)
     for item in slushpool_tag_list:
       result = slushpool_tags.get(item)
       items_to_call.append(result)
     while True:
-       x = items_to_call[count]
-      #  print(x)
-       if x == 'ok_workers' or x == 'off_workers':
-         slushpool_element = slushpool_query_dict["btc"][x]
-         send_to_blockclock(slushpool_element, x)
+       tag = items_to_call[count]
+       if tag == 'ok_workers' or tag == 'off_workers':
+         slushpool_element = slushpool_query_dict["btc"][tag]
+         send_to_blockclock(slushpool_element, tag)
+         print("Now Displaying: {tag}")
          if count >= len(items_to_call) - 1:
            count = 0
            time.sleep(refresh_rate)
          else:
            count += 1
            time.sleep(refresh_rate)
-       elif x == "hash_rate_5m" or x == "hash_rate_60m" or x == "hash_rate_24h" or x == "hash_rate_scoring":
-        slushpool_element = slushpool_query_dict["btc"][x]
+       elif tag == "hash_rate_5m" or tag == "hash_rate_60m" or tag == "hash_rate_24h" or tag == "hash_rate_scoring":
+        slushpool_element = slushpool_query_dict["btc"][tag]
         formatted_hash_result = round(slushpool_element / 1000, 1)
-        send_to_blockclock(formatted_hash_result, x)
+        send_to_blockclock(formatted_hash_result, tag)
+        print("Now Displaying: {tag}")
         if count >= len(items_to_call) -1:
             count = 0
             time.sleep(refresh_rate)
@@ -148,9 +148,10 @@ def format_slushpool_data():
             count += 1
             time.sleep(refresh_rate)
        else: 
-        slushpool_element = slushpool_query_dict["btc"][x]
+        slushpool_element = slushpool_query_dict["btc"][tag]
         formatted_result = "{:.7}".format(slushpool_element)
-        send_to_blockclock(formatted_result, x)
+        send_to_blockclock(formatted_result, tag)
+        print("Now Displaying: {tag}")
         if count >= len(items_to_call) -1:
             count = 0
             time.sleep(refresh_rate)
