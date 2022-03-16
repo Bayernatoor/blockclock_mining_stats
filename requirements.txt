@@ -1,0 +1,8 @@
+certifi==2021.10.8
+charset-normalizer==2.0.12
+idna==3.3
+PyInputPlus==0.2.12
+PySimpleValidate==0.2.12
+requests==2.27.1
+stdiomask==0.0.6
+urllib3==1.26.8
