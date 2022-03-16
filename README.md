@@ -55,7 +55,7 @@ nano blockclock_slushpool.py
 
 If you do not have **nano** installed simply open the **blockclock_slushpool.py** file with a text editor.
 
-Add your Slushpool Auth Token and your Blockclock IP address at the top of the file **(you'll see variables asking for that info, remove the text and the <> but keep them between the quotes " ". )**
+Add your Slushpool Auth Token and your Blockclock IP address at the top of the file **(you'll see variables asking for that info, remove the text and the < > but add the IP and Token within the  quotes - "IP". )**
 
 **Now save that file and close it**
 
