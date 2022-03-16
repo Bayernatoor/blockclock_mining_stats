@@ -141,7 +141,7 @@ def format_slushpool_data():
        if tag == 'ok_workers' or tag == 'off_workers':
          slushpool_element = slushpool_query_dict["btc"][tag]
          send_to_blockclock(slushpool_element, tag)
-         print("Now Displaying: {tag}")
+         print(f"Now Displaying: {tag}")
          if count >= len(items_to_call) - 1:
            count = 0
            time.sleep(refresh_rate)
@@ -153,7 +153,7 @@ def format_slushpool_data():
         formatted_hash_result = round(slushpool_element / 1000, 1)
         # call function that send formatted tags to blockclock
         send_to_blockclock(formatted_hash_result, tag)
-        print("Now Displaying: {tag}")
+        print(f"Now Displaying: {tag}")
         if count >= len(items_to_call) -1:
             count = 0
             time.sleep(refresh_rate)
@@ -165,7 +165,7 @@ def format_slushpool_data():
         # format result to 7 digit precision
         formatted_result = "{:.7}".format(slushpool_element)
         send_to_blockclock(formatted_result, tag)
-        print("Now Displaying: {tag}")
+        print(f"Now Displaying: {tag}")
         if count >= len(items_to_call) -1:
             count = 0
             time.sleep(refresh_rate)
