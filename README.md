@@ -2,6 +2,23 @@
 
 A basic Python script that allows you to broadcast current slushpool bitcoin mining info from your user profile directly to your BlockClock Mini (https://blockclockmini.com/)
 
+![thsblockclock](https://user-images.githubusercontent.com/55212954/158614788-8b850940-fb42-4c6b-ae84-7055e81db1b9.jpg)
+
+**Display the following Slushpool tags:**
+
+1. Confirmed Reward
+2. Unconfirmed Rewards
+3. Estimated Reward
+4. Alltime Reward
+5. Hashrate 5m
+6. Hashrate 60m
+7. Hashrate 24h
+8. Hashrate Scoring
+9. Active Workers
+10. Offline Workers
+
+----------------------
+
 ## Setup:
 
 First you'll want to obtain your **Blockclock's IP** address as well as a **Slushpool Auth Token**.
