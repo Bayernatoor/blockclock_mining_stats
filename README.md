@@ -78,4 +78,4 @@ The script will start, you can follow the instructions in the terminal.
 
 **I hope you enjoy. This is a little project to help me better learn Python and bitcoin.**
 
-**I plan to continue updating this script, the setup needs to be improved and the overall structure of the app as well. If you have any suggestions or notice bugs/improvements, please open an issue :D**
+**I plan to continue updating this script, the setup needs to be improved and the overall structure of the app as well. Gotta an tips or improvements or notice some bugs, I'd love to hear it :D. Just open an issue!
