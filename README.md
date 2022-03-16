@@ -95,4 +95,4 @@ The script will start, you can follow the instructions in the terminal.
 
 **I hope you enjoy. This is a little project to help me better learn Python and bitcoin.**
 
-**I plan to continue updating this script, the setup needs to be improved and the overall structure of the app as well. Gotta an tips or improvements or notice some bugs, I'd love to hear it :D. Just open an issue!**
+**I plan to continue updating this script, the setup needs to be improved and the overall structure of the app as well. Got any tips/improvements/feedback or notice some bugs i'd love to hear about it! Just open an issue!** :D
