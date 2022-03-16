@@ -17,6 +17,8 @@ A basic Python script that allows you to broadcast current slushpool bitcoin min
 9. Active Workers
 10. Offline Workers
 
+**Got requests for other tags? Let me know!
+
 ----------------------
 
 ## Setup:
