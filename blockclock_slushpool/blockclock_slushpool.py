@@ -137,6 +137,7 @@ def format_slushpool_data():
     # different conditions based on tag used, different formating applied.
     while True:
        tag = items_to_call[count]
+       slushpool_query_dict = get_slushpool_stats()
        if tag == 'ok_workers' or tag == 'off_workers':
          slushpool_element = slushpool_query_dict["btc"][tag]
          send_to_blockclock(slushpool_element, tag)
