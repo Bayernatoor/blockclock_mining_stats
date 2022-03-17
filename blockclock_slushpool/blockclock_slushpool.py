@@ -4,7 +4,7 @@ import requests
 import pyinputplus as pyip
 
 SLUSH_POOL_URL = "https://slushpool.com/accounts/profile/json/btc/"
-headers = {"SlushPool-Auth-Token": "<YOURSLUSHPOOLAUTHTOKENGOESHERE>"}
+HEADERS = {"SlushPool-Auth-Token": "<YOURSLUSHPOOLAUTHTOKENGOESHERE>"}
 BLOCKCLOCK_IP = "<YOUBLOCKCLOCKIPGOESHERE>"
 
 # Available tags
@@ -108,7 +108,7 @@ def get_slushpool_stats():
     """
     # try GET request and catch any errors
     try:
-        response = requests.get(SLUSH_POOL_URL, headers=headers)
+        response = requests.get(SLUSH_POOL_URL, headers=HEADERS)
         # make sure it's a valid 200 response
         if not response.status_code // 100 == 2:
             print(f"Error: Unexpected response {response}")
@@ -144,7 +144,7 @@ def loop_tag_list():
     while True:
         tag = items_to_call[count]
         slushpool_query_dict = get_slushpool_stats()
-        if tag == 'ok_workers' or tag == 'off_workers':
+        if tag in ("ok_workers", "off_workers"):
             slushpool_element = slushpool_query_dict["btc"][tag]
             send_to_blockclock(slushpool_element, tag)
             print(f"Now Displaying: {tag}")
@@ -154,8 +154,7 @@ def loop_tag_list():
             else:
                 count += 1
                 time.sleep(refresh_rate)
-        elif tag == "hash_rate_5m" or tag == "hash_rate_60m" or tag == "hash_rate_24h" \
-              or tag == "hash_rate_scoring":
+        elif tag in ("hash_rate_5m", "hash_rate_60m", "hash_rate_24h", "hash_rate_scoring"):
             slushpool_element = slushpool_query_dict["btc"][tag]
             formatted_hash_result = round(slushpool_element / 1000, 1)
             # call function that send formatted tags to blockclock
@@ -167,8 +166,8 @@ def loop_tag_list():
             else:
                 count += 1
                 time.sleep(refresh_rate)
-        elif tag == "confirmed_reward" or tag == "unconfirmed_reward" or tag == "estimated_reward" \
-              or tag == "all_time_reward":
+        elif tag in ("confirmed_reward", "unconfirmed_reward", "estimated_reward",
+                    "all_time_reward"):
             slushpool_element = slushpool_query_dict["btc"][tag]
             # format result to 7 digit precision
             formatted_result = "{:.7}".format(slushpool_element)
@@ -204,14 +203,13 @@ def send_to_blockclock(result, tag):
         string: GET request with URL
     """
     # build URL for blocklock
-    if tag == 'ok_workers' or tag == 'off_workers':
+    if tag in ('ok_workers', 'off_workers'):
         if tag == "ok_workers":
             url = f"http://{BLOCKCLOCK_IP}/api/show/number/{result}?pair=ASIC/UP"
         else:
             url = f"http://{BLOCKCLOCK_IP}/api/show/number/{result}?pair=ASIC/DOWN?"
         push_to_blocklock = requests.get(url)
-    elif tag == "hash_rate_5m" or tag == "hash_rate_60m" or tag == "hash_rate_24h"\
-         or tag == "hash_rate_scoring":
+    elif tag in ("hash_rate_5m", "hash_rate_60m", "hash_rate_24h", "hash_rate_scoring"):
         url = f"http://{BLOCKCLOCK_IP}/api/show/number/{result}?pair=TH/S"
         push_to_blocklock = requests.get(url)
     else:
