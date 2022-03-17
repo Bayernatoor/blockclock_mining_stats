@@ -40,7 +40,7 @@ def instructions():
     Enter the number 615 to skip to the next part or to end the selection process at any time.\n
     The list will display all available tags. First half is Slushpool tags, second is Blocklock tags.\n
     Tags will appear in the order selected and repeat continuously until the script is stopped (CTRL-C).
-    You may also select a refresh rate. Min: 5 minutes, Max: 10080 minutes (1 week, cause why not??!).\n
+    You'll also select a refresh rate. Min: 5 minutes, Max: 10080 minutes (1 week, cause why not??!).\n
     
     Note: Currently you can select up to 18 tags. You may select the same one multiple times.
           This is a WORK IN PROGRESS. ENJOY :)   
