@@ -16,6 +16,15 @@ A basic Python script that allows you to broadcast current slushpool bitcoin min
 8. Hashrate Scoring
 9. Active Workers
 10. Offline Workers
+11. Estimate Hash Rate
+12. USD Market Price
+13. EUR Market Price
+14. GBP Market Price
+15. Sats per Dollar
+16. Mempool Transactions
+17. Difficulty Retarget Date
+18. Blockchain Height
+19. Moscow Time
 
 *Got requests for other tags? Let me know!*
 
@@ -62,7 +71,7 @@ git clone https://github.com/Bayernatoor/blockclock_mining_stats.git && cd block
 python3 -m venv env && . env/bin/activate && pip install -r requirements.txt 
 ```
 
-Make sure you're always in the virtual environment (to enter you run **. env/bin/activate**) when running the script. You'll notice your terminal change, to exit the virtual environment enter ```deactivate``` in the terminal while in the directory. 
+*After running the above command you should be in the virtual environment. You'll want to make sure you are active the virtual enviro every time you run the app. To enter you run ```. env/bin/activate``` from within the ```blockclock_slushpool``` directory then ```cd blockclock_slushpool``` to access the directory to run the script ```python3 blockclock_slushpool.py```. To exit the virtual environment enter ```deactivate``` in the terminal while in the project  directory.* 
 
 Now let's add that IP and Auth Token to the script, enter the following: 
 
