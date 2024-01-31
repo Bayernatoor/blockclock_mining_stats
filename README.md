@@ -1,3 +1,5 @@
+THIS PROJECT IS NO LONGER MAINTAINED SEE: https://github.com/Bayernatoor/braiins_clock FOR NEW RUST VERSION OF SAME TOOL.
+
 # BLOCKCLOCK SLUSHPOOL STAT DISPLAYER
 
 A basic Python script that allows you to broadcast current slushpool bitcoin mining info from your user profile directly to your BlockClock Mini (https://blockclockmini.com/)
